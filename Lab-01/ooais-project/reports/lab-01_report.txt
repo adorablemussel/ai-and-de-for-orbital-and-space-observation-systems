@@ -1,0 +1,18 @@
+description of dataset structure
+    dataset structure is provided in format:
+    timestamp,object_id,temperature,velocity
+
+identification of observed objects
+    observed objects are following:
+    OBJ-001
+    OBJ-002
+    OBJ-003
+    (OBJ-004) - removed from dataset
+
+summary of detected data issues
+    for the OBJECT-004 at 2026-03-01T12:20:00 there is INVALID record (not a number)
+
+description of cleaning steps
+    we copy the original dataset to seperate a file, excluding the invalid records by searching for a keyword 'INVALID'
+
+
