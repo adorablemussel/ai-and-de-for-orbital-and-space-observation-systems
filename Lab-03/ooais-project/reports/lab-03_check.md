@@ -76,4 +76,20 @@ Task 5: Column Consistency Validation
 •Should the pipeline stop if validation fails?
 - yes, if there is no solution for this in the pipeline
 
+Task 6 - 8
+- all done inside src/ingestion/ingest_data.py
+
 Task 9: Preparing Data for Preprocessing and Model Input
+I made seperate script for that in src/features/build_features.py
+
+Task 10: Ingestion Summary and Data Quality Reporting
+- done in ingest_data.py and build_fetures.py
+
+P2: Pipeline Thinking
+Explain:
+•why ingestion must precede preprocessing
+- because it validates the data for further steps
+•what happens if invalid data is not removed
+- model most likely may learn wrong patterns
+•how ingestion affects model quality
+- it improves overall quality of model by giving clean, consistent input data

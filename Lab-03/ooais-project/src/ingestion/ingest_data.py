@@ -38,6 +38,7 @@ summary += f"Dataset: {metadata['dataset_name']}\nRecords loaded: {len(rows)}\nE
 columns_check = reader.fieldnames == metadata['columns']
 num_records_check = len(rows) == metadata['num_records']
 invalid_records_check = len(invalid_records) == metadata['invalid_records']
+target_column_check = metadata['target_column'] in reader.fieldnames
 
 if(columns_check):
     print("Column validation: OK")
@@ -65,6 +66,15 @@ else:
     print(f"Expected: {metadata['invalid_records']}")
     print(f"Actual:   {len(invalid_records)}")
     summary += f"Invalid record count: MISMATCH\nExpected: {metadata['invalid_records']}\nActual:   {len(invalid_records)}\n"
+
+if(target_column_check):
+    print("Target column validation: OK")
+    summary += "Target column validation: OK\n"
+else:
+    print("Target column validation: MISMATCH")
+    print(f"Expected: {metadata['target_column']}")
+    print(f"Actual:   {reader.fieldnames}")
+    summary += f"Target column validation: MISMATCH\nExpected: {metadata['target_column']}\nActual:   {reader.fieldnames}\n"
 
 # EKSPORT NOWYCH PLIKÓW
 if (columns_check and num_records_check and invalid_records_check):

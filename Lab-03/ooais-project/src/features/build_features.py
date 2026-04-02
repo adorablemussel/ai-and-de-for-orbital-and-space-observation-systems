@@ -1,6 +1,8 @@
 import json
 import csv
 
+summary = ""
+
 metadata_file  = "data/raw/metadata.json"
 output_valid   = "data/processed/observations_valid.csv"
 
@@ -22,6 +24,8 @@ if model_input: # sprawdzam czy są jakiekolwiek dane
     feature_columns_check = list(model_input[0].keys()) == metadata['feature_columns']
 
     if(feature_columns_check):
+        print("Feature column validation: OK")
+        summary += "Feature column validation: OK\n"
         output_model_input = "data/processed/model_input.csv"
         with open(output_model_input, mode="w", newline="", encoding="utf-8") as file:
             writer = csv.DictWriter(file, fieldnames=model_input[0].keys())
@@ -30,5 +34,14 @@ if model_input: # sprawdzam czy są jakiekolwiek dane
         
         print("Successfuly exported:")
         print("\tdata/processed/model_input.csv")
+        summary += "Successfuly exported:\n\tdata/processed/model_input.csv\n"
+    else:
+        print("Feature column validation: MISMATCH")
+        print(f"Expected: {metadata['feature_columns']}")
+        print(f"Actual:   {list(model_input[0].keys())}")
+        summary += f"Feature column validation: MISMATCH\nExpected: {metadata['feature_columns']}\nActual:   {list(model_input[0].keys())}\n"
 
-
+# EKSPORT PODSUMOWANIA
+output_summary = "reports/features_summary.txt"
+with open(output_summary, mode="w", encoding="utf-8") as file:
+    file.write(summary)
