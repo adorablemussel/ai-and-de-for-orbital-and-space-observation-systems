@@ -248,7 +248,7 @@ def run_controlled_experiments(X_train, X_test, y_train, y_test):
     plt.savefig("reports/experiments_plot.png")
     plt.close()
     
-    print("\nGraph saved in: reports/experiments_plot.png")
+    print("\nSaved plot: reports/experiments_plot.png")
 
     return {
         "dt_depths": depths, "dt_acc": dt_accuracies,
