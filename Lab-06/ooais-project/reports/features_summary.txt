@@ -1,0 +1,3 @@
+Feature column validation: OK
+Successfuly exported:
+	data/processed/model_input.csv
