@@ -1,0 +1,29 @@
+How is an image converted into numbers?
+    the image is resized to 64x64 pixels, converted to RGB, normalized by dividing pixel values by 255.0, and then flattened into a single 1D array of 12,288 numerical values
+
+What does the model actually “see”?
+    the model only sees a flat, abstract mathematical vector of 12,288 floating-point numbers, completely lacking any human visual context or spatial geometry
+
+Why can the model classify random or unknown images as one of the known classes?
+    the model divides the entire mathematical feature space strictly among the classes it was trained on, forcing any new input—even random noise—into whichever known category's territory it randomly falls
+
+Why can this behavior be dangerous in real AI systems?
+    this behaviour, known as "high-confidence silent failure," can cause automated systems (like self-driving cars or satellite targeting) to take incorrect, potentially catastrophic actions based on misinterpreted anomalies.
+
+What would need to be improved before using such a system operationally?
+    the system would need an Out-Of-Distribution (OOD) detection mechanism to flag unknown data, a minimum confidence threshold for predictions, and a more advanced neural network architecture (like a CNN) to capture actual spatial features
+
+Which model achieved the highest accuracy?
+    based on your experiment, the Random Forest model achieved the highest accuracy
+
+Which model was fastest to train?
+    the K-Nearest Neighbors (KNN) model was the fastest to train, taking almost zero seconds because it simply memorizes the training data
+
+Did the fastest model also achieve the best accuracy?
+    no, the fastest model (KNN) achieved the lowest accuracy of all the tested algorithms
+
+Did all models classify the same image in the same way?
+    no, different models often assign different labels to the same image because each algorithm mathematically defines its decision boundaries in a completely different way
+
+What does the accuracy vs training time plot show?
+    the plot illustrates the classic machine learning trade-off between computational cost and predictive performance, showing that while some models (like Logistic Regression) take a long time to train with mediocre results, others (like Random Forest) offer an excellent balance of speed and high accuracy
