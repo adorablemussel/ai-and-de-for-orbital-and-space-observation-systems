@@ -49,7 +49,7 @@ def predict_image(models, image_path):
         REPORTS_DIR.mkdir(parents=True, exist_ok=True)
         save_path = REPORTS_DIR / f"prediction_result_{path.stem}.png"
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
-        print(f"Obrazek z predykcjami zapisano w: {save_path}")
+        print(f"Prediction saved to: {save_path}")
 
 def main():
     models = load_all_models()
