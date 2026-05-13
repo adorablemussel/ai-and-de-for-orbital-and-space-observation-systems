@@ -1,0 +1,29 @@
+CLASSICAL ML:
+Model: Random Forest
+Training time: ~1.5 seconds
+Accuracy: ~75%
+
+CNN:
+Model: Simple CNN (3 splotal layers)
+Training time: ~30 seconds
+Accuracy: ~91%
+
+BETTER ACCURACY:
+CNN achieved significantly higher test accuracy compared to Random Forest.
+
+FASTER TRAINING:
+Classical ML (Random Forest) trains much faster because it processes flat vectors on CPU.
+
+FEWER CLASS CONFUSIONS:
+CNN made fewer systematic mistakes between visually similar classes (forest and river).
+
+GENERALIZATION:
+CNN generalizes better because data augmentation helps it learn spatial patterns instead of memorizing pixels.
+
+ENGINEERING ANALYSIS:
+- Which model achieved higher accuracy? CNN.
+- Which model trained faster? Classical ML.
+- Which model produced fewer class confusions? CNN.
+- Which model handled difficult images better? CNN.
+- Which model appears more robust? CNN with data augmentation.
+- Is the additional computational cost of CNN justified? Yes, high accuracy is critical for real Earth Observation missions.
