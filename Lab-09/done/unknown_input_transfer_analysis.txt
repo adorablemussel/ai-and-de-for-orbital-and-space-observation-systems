@@ -1,0 +1,11 @@
+Does the transfer model also force a known class prediction?
+Yes. The Softmax activation still forces the output probabilities to sum to 1.0 across the known classes.
+
+Does it give high confidence on unknown input?
+Yes. Deep neural networks, including transfer learning models, suffer from overconfidence and often assign >90% probability to random or unknown images.
+
+Is transfer learning enough to solve out-of-distribution detection?
+No. Transfer learning only improves feature representation; it does not change the closed-set nature of the classifier.
+
+What additional mechanism would be needed in an operational system?
+An Out-of-Distribution (OOD) detection module, such as uncertainty estimation (entropy), feature-space distance analysis, or an explicit "Unknown/Anomaly" class.

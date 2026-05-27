@@ -1,0 +1,40 @@
+MODEL COMPARISON
+================
+
+1. SimpleCNN from scratch
+Accuracy: 0.65
+Comments: Struggled to learn complex features from a small dataset. High risk of overfitting.
+
+2. ResNet18 frozen feature extractor
+Accuracy: 0.95
+Comments: Excellent baseline. Reused ImageNet features effectively. Fast and stable training.
+
+3. ResNet18 fine-tuned last block
+Accuracy: 1.00
+Comments: Achieved perfect test accuracy by adapting high-level features to satellite imagery, though slower to train.
+
+BEST ACCURACY: ResNet18 fine-tuned (100%)
+BEST ENGINEERING TRADE-OFF: ResNet18 frozen feature extractor (95% accuracy with minimal risk of overfitting).
+
+Engineering Questions:
+
+Which model achieved the best accuracy? 
+ResNet18 fine-tuned last block (100%).
+
+Which model required the least implementation effort? 
+ResNet18 frozen feature extractor (simple layer replacement).
+
+Which model is most suitable for a small dataset? 
+ResNet18 frozen (prevents overfitting).
+
+Which model is most suitable for a real operational system? 
+ResNet18 fine-tuned, assuming a larger dataset is available for production training to ensure the 100% accuracy isn't just overfitting.
+
+When would you train a CNN from scratch? 
+When dealing with a massive dataset in a highly specific domain (e.g., SAR imagery, medical imaging) where ImageNet features are irrelevant.
+
+When would you use transfer learning? 
+When data is limited and the task involves standard visual features (edges, textures, RGB colors).
+
+When would you fine-tune a pretrained model? 
+When you have a medium-sized dataset and computational resources to adapt high-level features without overfitting.

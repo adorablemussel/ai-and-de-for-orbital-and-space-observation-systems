@@ -1,0 +1,20 @@
+Did fine-tuning improve accuracy?
+Yes, it improved significantly. The accuracy reached a perfect 1.0 (100%), up from the frozen model's 0.95 (95%).
+
+Did training become slower?
+Yes, training time increased because gradients had to be computed and updated for all parameters in layer4, not just the final classifier.
+
+Did the confusion matrix change?
+Yes, all previous misclassifications were eliminated, resulting in a perfect diagonal matrix.
+
+Did any class improve more than others?
+Yes, the "river" class improved the most. In the frozen model, it had 3 misclassifications (confused with forest and residential), but fine-tuning fixed all of them.
+
+Did any class become worse?
+No, no class degraded.
+
+Is fine-tuning worth the additional computational cost?
+In this specific run, fine-tuning achieved perfect accuracy, making it seem highly valuable. However, achieving 100% on a test set of only 60 images strongly suggests the model might be memorizing the data (overfitting). In a real scenario, the cost might not be justified without a larger validation set to confirm this 100% isn't an illusion.
+
+Would you use the frozen model or the fine-tuned model in a small-data satellite classification problem?
+Despite the 100% result here, I would generally prefer the frozen model for small datasets to ensure generalization and avoid overfitting, unless strict validation proves the fine-tuned model is truly robust.

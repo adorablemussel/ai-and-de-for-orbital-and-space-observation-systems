@@ -1,0 +1,20 @@
+FINAL ENGINEERING DECISION
+==========================
+
+Selected model: 
+ResNet18 with frozen feature extractor.
+
+Technical justification:
+This model provided the best trade-off between accuracy, training time, and implementation complexity. Leveraging ImageNet features allowed it to achieve high accuracy (~90%) despite the very small dataset (240 training images).
+
+Expected advantages:
+1. High accuracy compared to training from scratch.
+2. Fast and stable training (only the final fully connected layer was updated).
+3. Strong resistance to overfitting due to frozen convolutional layers.
+
+Possible risks:
+1. The model assumes a closed-set environment and will confidently misclassify Out-of-Distribution (OOD) images (e.g., clouds, sensor noise).
+2. The dataset might be too small to cover all intra-class variations (e.g., seasonal changes in forests).
+
+Deployment considerations:
+While excellent for prototyping, a real operational deployment requires implementing OOD detection mechanisms and proper input normalization to ensure the model doesn't silently fail when encountering unexpected data.
