@@ -1,0 +1,14 @@
+OCCLUSION ANALYSIS
+==================
+- Do both methods highlight similar regions? 
+  Yes, both target the shore infrastructure intersection rather than the river itself.
+- Which explanation appears more localized? 
+  Occlusion sensitivity (bounded strictly by the sliding patch size).
+- Which explanation appears easier to interpret? 
+  Grad-CAM (smooth, continuous gradients are visually intuitive).
+- Did both methods identify the river region? 
+  No, both highlighted the non-water background elements on the shore.
+- What happens for unknown inputs? 
+  Occlusion yields scattered, noisy, or uniformly low sensitivity values.
+- Can one explanation method completely replace another? 
+  No. Grad-CAM (gradient-based) and Occlusion (perturbation-based) complement each other by validating different behavioral properties.

@@ -1,0 +1,10 @@
+CLASS ATTENTION CONSISTENCY
+===========================
+- Does the model consistently focus on similar regions? 
+  Consistent for residential (buildings) and forest (textures), but highly inconsistent for rivers.
+- Does attention vary significantly? 
+  Yes, for rivers, the focus shifts entirely based on surrounding background infrastructure.
+- Which class produces the most stable attention patterns? 
+  Residential (highly stable geometric features).
+- Which class appears more difficult? 
+  River (the model avoids the water medium and relies completely on shore context).

@@ -1,0 +1,12 @@
+TRANSFORMATION ANALYSIS
+=======================
+- Did confidence change? 
+  Negligible change for flips/rotations; severe drops occurred under Gaussian noise and blur.
+- Did attention regions move? 
+  They rotated/flipped symmetrically with valid geometric transforms, but became chaotic under noise.
+- Which transformations had the largest impact? 
+  Gaussian noise and heavy blur.
+- Which transformations had minimal impact? 
+  Horizontal flips and 90-degree rotations.
+- Does the model appear robust? 
+  Robust to spatial adjustments, but highly fragile against pixel-level corruptions and high-frequency atmospheric noise.

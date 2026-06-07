@@ -1,0 +1,11 @@
+GRAD-CAM ANALYSIS
+=================
+Prediction: river (correct)
+Confidence: 0.9802
+Observed attention:
+Interpretation:
+Conclusions:
+- Did the model focus on meaningful regions?
+- Did suspicious predictions appear?
+- Can explainability guarantee correctness?
+- Why is XAI important in operational systems?

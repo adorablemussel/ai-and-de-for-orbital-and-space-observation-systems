@@ -1,0 +1,14 @@
+CAM METHODS COMPARISON
+======================
+- Do all CAM methods highlight the same image regions? 
+  Generally yes, but with varying degrees of localization and boundaries.
+- Which method produces the sharpest visualization? 
+  EigenCAM (strictly isolates high-contrast boundaries).
+- Which method produces the smoothest visualization? 
+  HiResCAM / GradCAM.
+- Which method appears easiest to interpret? 
+  GradCAM and LayerCAM (clear gradient mapping over key objects).
+- Do any methods produce suspicious or unexpected attention? 
+  Yes, EigenCAM completely ignores the central infrastructure and shifts to the right boundary.
+- What does this suggest about relying on only one XAI method? 
+  Single methods can mislead; ensemble cross-verification is mandatory for robust deployment.

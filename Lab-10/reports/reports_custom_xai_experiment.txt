@@ -1,0 +1,15 @@
+CUSTOM XAI EXPERIMENT: SHORTCUT LEARNING VERIFICATION
+=====================================================
+Goal: 
+Verify if the model systematically ignores water and relies entirely on shore infrastructure shortcuts to classify rivers.
+
+Methodology: 
+Test the model against three variants: an urban river (high context), a deep-forest natural river (no context), and a cropped sample containing only water. Extract Grad-CAM and Occlusion maps for all three.
+
+Observations: 
+- Urban River: Extremely high confidence (0.98), but attention is exclusively on roads/clearings.
+- Natural River: Confidence drops significantly; attention map wanders aimlessly along tree lines.
+- Pure Water: Classification completely fails, misidentifying the sample as forest or highway.
+
+Conclusions: 
+The experiment confirms severe dataset bias. The model failed to learn the intrinsic properties of water bodies, relying instead on a spurious correlation with shore modifications. This shortcut makes the model unsafe for deployment in natural or unmapped wilderness areas.

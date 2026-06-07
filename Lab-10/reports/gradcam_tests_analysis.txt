@@ -1,0 +1,32 @@
+GRAD-CAM ANALYSIS
+================
+Experiment 1: Forest
+Prediction: forest
+Confidence: 0.9636
+Observed attention: Blurry, diffuse attention on random vegetation patches.
+Interpretation: Model relies on homogenous textural patterns rather than explicit objects.
+
+Experiment 2: Residential
+Prediction: residential
+Confidence: 0.9960
+Observed attention: Highly localized on geometric grid patterns, roads, and buildings.
+Interpretation: Model correctly captures distinct urban structural elements.
+
+Experiment 3: Highway
+Prediction: river
+Confidence: 0.8113
+Observed attention: Focused tightly along the linear path of the highway lane.
+Interpretation: Dataset bias error. Lacking a 'highway' class, the model misclassifies the linear geometry as a 'river'.
+
+Experiment 4: Noise
+Prediction: forest
+Confidence: 0.6333
+Observed attention: Spurious and random hot spots across the image.
+Interpretation: Forced prediction where the model mistakenly matches random pixel variance with forest texture.
+
+Final Conclusions:
+- The model does not always focus on meaningful regions; for the river sample, it targeted the shore infrastructure intersection instead of the water.
+- Grad-CAM successfully uncovers critical model vulnerabilities, such as shortcut learning and domain errors.
+- Unknown inputs produce high-confidence false predictions, indicating a lack of safe rejection mechanisms.
+- Explainability does not guarantee correctness but serves as an indispensable debugging tool.
+- XAI is vital in Earth Observation to prevent silent, disastrous failures caused by distribution shifts or sensor noise.
